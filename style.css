@@ -1,0 +1,267 @@
+/* Reset de margens e paddings */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo geral */
+body {
+  background-color: #faf0d5; /* Cor de fundo suave */
+  color: #333;
+  line-height: 1.6;
+  padding-top: 80px; /* Mantém o espaço do cabeçalho fixo */
+  font-size: 16px;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #ef9832;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+header .logo {
+  width: 70px;
+  margin-right: 15px;
+}
+
+/* Descrição */
+#description {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 40px;
+  margin: 30px 20px 0;
+  border-radius: 12px;
+}
+
+.videoGrupo {
+  flex: 1;
+  max-width: 45%;
+  margin-right: 20px;
+}
+
+.videoGrupo video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.textContent {
+  flex: 2;
+  max-width: 55%;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 30px;
+}
+
+.textContent h3 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.textContent p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+  margin-top: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.textContent p a {
+  color: #ef9832;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.textContent p a:hover {
+  text-decoration: underline;
+}
+
+/* Botões */
+#buttons-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  background-color: #ef9832;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #d57d1e;
+  transform: scale(1.05);
+}
+
+section {
+  padding: 40px 20px;
+  margin: 0 20px 40px; /* Remover margens extras ao redor do section */
+  border-radius: 12px;
+}
+
+section h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+section p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+  margin-top: 10px;
+}
+
+/* Estilos para o alfabeto */
+#alfabeto {
+  display: flex;
+  flex-wrap: wrap; /* Permite a quebra das imagens e vídeos em várias linhas */
+  justify-content: center;
+  gap: 30px; /* Espaçamento entre as imagens/vídeos */
+  padding-top: 20px; /* Espaço entre o título e as imagens/vídeos */
+}
+
+#alfabeto img,
+#alfabeto video {
+  width: 150px; /* Aumenta o tamanho das imagens e vídeos */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#alfabeto figure {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#alfabeto figcaption {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+  font-weight: bold;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+  body {
+    padding-top: 0; /* Ajusta o padding superior em telas menores */
+  }
+
+  #description {
+    flex-direction: column;
+    margin: 100px 20px 20px;
+  }
+
+  .videoGrupo {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .textContent {
+    max-width: 100%;
+  }
+
+  .btn {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+
+  section {
+    padding: 20px;
+    margin: 0 20px 20px;
+  }
+}
+
+#alfabeto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+#alfabeto h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.alfabeto-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-items: center;
+  padding: 20px 0;
+}
+
+.alfabeto-container figure {
+  margin: 0;
+  text-align: center;
+}
+
+.alfabeto-container .imgAlfabeto {
+  width: 200px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alfabeto-container .imgAlfabeto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.alfabeto-container figcaption {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #555;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
