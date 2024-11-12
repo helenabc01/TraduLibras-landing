@@ -7,10 +7,10 @@
 
 /* Estilo geral */
 body {
-  background-color: #faf0d5; /* Cor de fundo suave */
+  background-color: #faf0d5;
   color: #333;
   line-height: 1.6;
-  padding-top: 80px; /* Mantém o espaço do cabeçalho fixo */
+  padding-top: 80px;
   font-size: 16px;
   overflow-x: hidden;
   min-height: 100vh;
@@ -51,15 +51,16 @@ header .logo {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 40px 40px;
-  margin: 30px 20px 0;
+  padding: 20px;
+  margin: 30px 10px 0;
   border-radius: 12px;
+  width: 100%;
 }
 
 .videoGrupo {
   flex: 1;
-  max-width: 45%;
-  margin-right: 20px;
+  flex-basis: 100%;
+  margin-right: 0;
 }
 
 .videoGrupo video {
@@ -71,19 +72,12 @@ header .logo {
 
 .textContent {
   flex: 2;
-  max-width: 55%;
+  flex-basis: 100%;
   text-align: justify;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 30px;
-}
-
-.textContent h3 {
-  font-size: 26px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 15px;
+  margin: 20px 0;
 }
 
 .textContent p {
@@ -104,41 +98,6 @@ header .logo {
   text-decoration: underline;
 }
 
-/* Botões */
-#buttons-section {
-  text-align: center;
-  margin: 40px 0;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.btn {
-  background-color: #ef9832;
-  color: white;
-  padding: 15px 30px;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.3s ease-in-out;
-}
-
-.btn:hover {
-  background-color: #d57d1e;
-  transform: scale(1.05);
-}
-
-section {
-  padding: 40px 20px;
-  margin: 0 20px 40px; /* Remover margens extras ao redor do section */
-  border-radius: 12px;
-}
-
 section h2 {
   font-size: 28px;
   font-weight: 600;
@@ -156,79 +115,20 @@ section p {
 /* Estilos para o alfabeto */
 #alfabeto {
   display: flex;
-  flex-wrap: wrap; /* Permite a quebra das imagens e vídeos em várias linhas */
-  justify-content: center;
-  gap: 30px; /* Espaçamento entre as imagens/vídeos */
-  padding-top: 20px; /* Espaço entre o título e as imagens/vídeos */
-}
-
-#alfabeto img,
-#alfabeto video {
-  width: 150px; /* Aumenta o tamanho das imagens e vídeos */
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#alfabeto figure {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#alfabeto figcaption {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #555;
-  font-weight: bold;
-}
-
-/* Estilos Responsivos */
-@media (max-width: 768px) {
-  body {
-    padding-top: 0; /* Ajusta o padding superior em telas menores */
-  }
-
-  #description {
-    flex-direction: column;
-    margin: 100px 20px 20px;
-  }
-
-  .videoGrupo {
-    max-width: 100%;
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .textContent {
-    max-width: 100%;
-  }
-
-  .btn {
-    padding: 12px 25px;
-    font-size: 16px;
-  }
-
-  section {
-    padding: 20px;
-    margin: 0 20px 20px;
-  }
-}
-
-#alfabeto {
-  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   padding-top: 20px;
+  width: 100%;
 }
 
-#alfabeto h2 {
-  font-size: 28px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 20px;
+#alfabeto img,
+#alfabeto video {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .alfabeto-container {
@@ -237,15 +137,12 @@ section p {
   gap: 20px;
   justify-items: center;
   padding: 20px 0;
-}
-
-.alfabeto-container figure {
-  margin: 0;
-  text-align: center;
+  width: 100%;
 }
 
 .alfabeto-container .imgAlfabeto {
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -264,4 +161,71 @@ section p {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 1024px) {
+  .alfabeto-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 0;
+  }
+
+  #description {
+    flex-direction: column;
+    padding: 40px 20px;
+    margin: 30px 20px 0;
+  }
+
+  .videoGrupo {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .videoGrupo video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .textContent {
+    max-width: 100%;
+  }
+
+  .btn {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+
+  section {
+    padding: 20px;
+    margin: 0 20px 20px;
+  }
+
+  #alfabeto {
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+  .alfabeto-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .alfabeto-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+#alfabeto h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
 }
